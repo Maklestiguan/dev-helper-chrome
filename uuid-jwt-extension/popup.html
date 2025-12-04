@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>UUID & JWT Tools</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>UUID & JWT Tools</h1>
+
+      <section class="card">
+        <h2>Generate UUID v4</h2>
+        <div class="row">
+          <button id="genUuidBtn">Generate UUID v4</button>
+          <input id="uuidOut" readonly />
+          <button id="copyUuid">Copy</button>
+        </div>
+      </section>
+
+      <section class="card"></section>
+        <h2>Generate Timestamp (Date.now())</h2>
+        <div class="row">
+          <button id="genTsBtn">Generate Timestamp</button>
+          <input id="tsOut" readonly />
+          <button id="copyTs">Copy</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Decode JWT</h2>
+        <textarea id="jwtIn" placeholder="Paste a JWT here (header.payload.signature)"></textarea>
+        <div class="row">
+          <button id="decodeBtn">Decode</button>
+          <button id="copyPayload">Copy Payload JSON</button>
+        </div>
+
+        <div class="jwtBoxes">
+          <div>
+            <h3>Header</h3>
+            <pre id="hdr"></pre>
+          </div>
+          <div>
+            <h3>Payload</h3>
+            <pre id="pld"></pre>
+          </div>
+        </div>
+
+        <div>
+          <h3>Signature</h3>
+          <pre id="sig"></pre>
+        </div>
+      </section>
+
+      <footer>
+        <small>Local decoding only. This extension does not send data anywhere.</small>
+      </footer>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
